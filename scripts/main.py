@@ -66,8 +66,16 @@ def transform_to_silver():
     print(f'[LOAD TO SILVER] Loaded {schema.fetch("SELECT COUNT(*) FROM silver.taxi_trips_cleaned"):,} valid rows ...')
     print(f'[LOAD TO SILVER] Loaded {schema.fetch("SELECT COUNT(*) FROM silver.data_quality_issues"):,} invalid rows ...')
     
+def analytics_to_gold():
+    # L3 --> GOLD LAYER
+    gold_layer = [
+        Path('db/init/04_gold_mart.sql'),
+        *sorted(Path('db/schemas/gold').glob('*.sql'))
+    ]
+    schema.execute_many(gold_layer)
 
 if __name__ == '__main__':
     extract()
     load_to_bronze()
     transform_to_silver()
+    analytics_to_gold()
