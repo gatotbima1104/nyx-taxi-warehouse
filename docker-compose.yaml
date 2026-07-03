@@ -1,4 +1,23 @@
 services:
+  nyc-warehouse:
+    build: .
+    environment:
+      TAXI_URL: ${TAXI_URL}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_URL: ${POSTGRES_URL}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./db:/app/db
+    networks:
+      - nyc-networks
+    depends_on:
+      db:
+        condition: service_healthy
   db:
     image: postgres:16-alpine
     container_name: nyc-taxi-warehouse-db
@@ -18,6 +37,11 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
+    networks:
+      - nyc-networks
 
 volumes:
   postgres_data:
+
+networks:
+  nyc-networks:
