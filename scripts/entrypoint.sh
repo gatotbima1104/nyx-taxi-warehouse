@@ -13,7 +13,7 @@ mkdir -p "$LOG_DIR"
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Starting Pipeline" \
 | tee -a "$LOG_FILE"
 
-python -u -m scripts.main 2>&1 \
+uv run python -u -m scripts.main 2>&1 \
 | tee -a "$LOG_FILE" \
 | grep --line-buffered "^\[INFO\]"
 
