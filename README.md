@@ -201,12 +201,6 @@ TAXI_URL=https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01
 docker compose up --build
 ```
 
-Alternatively, if you're running the project `locally without (without Docker)`, make sure PostgreSQL is running and the `.env` file is configured, then execute:
-
-```bash
-python -m scripts.main
-```
-
 ## Future Improvements
 
 * Apache Airflow orchestration
