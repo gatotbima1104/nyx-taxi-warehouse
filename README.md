@@ -96,6 +96,8 @@ The pipeline consists of the following stages:
 
 ## Database Layers
 
+![alt text](docs/Medallion_Layering.png)
+
 ### Bronze
 
 Tables:
