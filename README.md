@@ -100,6 +100,8 @@ The pipeline consists of the following stages:
 
 ### Bronze
 
+![alt text](docs/bronze_ERD.png)
+
 Tables:
 
 * `raw_taxi_trips`
@@ -139,6 +141,8 @@ This optimization became one of the biggest performance improvements in the proj
 
 ### Silver
 
+![alt text](docs/silver_ERD.png)
+
 * `taxi_trips_cleaned`
 * `taxi_zones`
 * `data_quality_issues`
@@ -147,6 +151,8 @@ Contains cleaned, invalid data issues and validated datasets.
 
 ### Gold
 
+![alt text](docs/gold_ERD.png)
+
 Analytical tables and views for reporting, including:
 
 * Daily Summary
@@ -154,6 +160,12 @@ Analytical tables and views for reporting, including:
 * Zone Performance
 * Payment Behavior
 * Route Performance
+
+### Audit
+
+![alt text](docs/audit_ERD.png)
+
+Logging tables for maintainable pipelines logs
 
 ## Features
 
