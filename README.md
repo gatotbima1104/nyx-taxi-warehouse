@@ -235,7 +235,13 @@ bash scripts/run_pipeline.sh
 
 ## Report
 
+Expected reporting data template
 ![alt text](docs/report_data.png)
+
+## Business Analytics
+
+Example of business analytics inside `logs/business_analytics.log`
+![alt text](docs/example_analytics2.png)
 
 For further analytics and seeing logs, you can dive deeper in `logs/pipeline.log` and `logs/business_analytics.log`
 
