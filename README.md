@@ -243,10 +243,31 @@ Expected reporting data template
 
 ## Business Analytics
 
-Example of business analytics inside `logs/business_analytics.log`
-![alt text](docs/example_analytics2.png)
+- **Peak Trip Date and Hour**
+  - Identifies the busiest pickup dates and hours by analyzing trip volume.
+  - The results show that demand frequently peaks during the late afternoon and evening commuting hours (around **5–6 PM**).
+   ![alt text](docs/peak_hour.png)
 
-For further analytics and seeing logs, you can dive deeper in `logs/pipeline.log` and `logs/business_analytics.log`
+- **Data Quality Issues**
+  - Summarizes records that failed validation during the Silver layer transformation.
+  - Invalid records are categorized by error type, including:
+    - Invalid trip distance
+    - Invalid trip duration
+    - Invalid fare amount
+    - Invalid passenger count
+   ![alt text](image.png)
+
+- **Top Pickup Zones by Revenue**
+  - Identifies the pickup locations that generate the highest total revenue.
+  - Airport zones such as **JFK Airport** and **LaGuardia Airport**, along with major commercial areas in Manhattan, contribute the highest revenue.
+  ![alt text](docs/top10_pickupzone.png)
+
+- **Top 3 Pickup Zones per Borough**
+  - Ranks the three highest revenue-generating pickup zones within each borough.
+  - This allows users to compare business performance across different boroughs.
+   ![alt text](docs/top3_zone.png)
+
+For further analytics and seeing all business-analytics and logs, you can dive deeper in `logs/pipeline.log` and `logs/business_analytics.log`
 
 ## Future Improvements
 
