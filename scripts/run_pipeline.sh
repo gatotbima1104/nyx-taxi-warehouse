@@ -24,7 +24,7 @@ fi
 
 # Execute the pipeline inside Docker container
 docker compose exec -T nyc-warehouse \
-    uv run python -u main.py 2>&1 \
+    uv run python -u -m scripts.main 2>&1 \
 | tee -a "$LOG_FILE" \
 | grep --line-buffered "^\[INFO\]"
 

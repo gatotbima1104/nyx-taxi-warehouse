@@ -46,6 +46,7 @@ nyc-taxi-warehouse/
 │      └── gold/
 ├── scripts/
 │   ├── run_pipeline.sh  # Entrypoint 
+│   ├── main.py          # Main app
 │   ├── managers/
 │   ├── reporters/
 │   └── layers/
@@ -60,7 +61,6 @@ nyc-taxi-warehouse/
 ├── Dockerfile
 ├── docker-compose.yml
 ├── env.example
-├── main.py             # Main app
 └── README.md
 ```
 
