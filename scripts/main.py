@@ -5,7 +5,7 @@ from contextlib import redirect_stdout
 from scripts.taxi_extractor import TaxiExtractor
 from utils.constants import (
     TAXI_DATA_FILENAME,
-    TAXI_DATA_URL,
+    TAXI_URL,
     TAXI_ZONE_LOOKUP_TABLE,
     TAXI_ZONE_LOOKUP_URL,
     POSTGRES_URL,
@@ -40,7 +40,7 @@ audit = AuditManager(conn)
 def extract() -> list[str]:
     print("\n")
     extract_files = [
-        (TAXI_DATA_URL, TAXI_DATA_FILENAME),
+        (TAXI_URL, TAXI_DATA_FILENAME),
         (TAXI_ZONE_LOOKUP_URL, TAXI_ZONE_LOOKUP_TABLE)
     ]
 
