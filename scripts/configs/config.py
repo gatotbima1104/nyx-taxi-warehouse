@@ -1,4 +1,5 @@
 from pathlib import Path
+from utils.constants import TAXI_DATA_FILENAME
 
 # BRONZE
 BRONZE_SQL_FILES = [
@@ -9,7 +10,7 @@ BRONZE_SQL_FILES = [
 
 BRONZE_LOADS = [
     {
-        "file": Path("data/raw/raw_yellow_tripdata_2026_01.parquet"),
+        "file": Path(f"data/raw/{TAXI_DATA_FILENAME}"),
         "table": "raw_taxi_trips",
     },
     {

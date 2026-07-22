@@ -217,7 +217,7 @@ POSTGRES_URL=     # Note: default host=db following docker setup
 # Dataset (Change based on your yyyy-mm needed) as dummy used 2026-01
 TAXI_URL=https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01.parquet
 TAXI_ZONE_LOOKUP_URL=https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv
-TAXI_DATA_FILENAME=raw_yellow_tripdata_2026_01.parquet
+TAXI_DATA_FILENAME=raw_yellow_tripdata_2026-01.parquet
 TAXI_ZONE_LOOKUP_TABLE=taxi_zone_lookup.csv
 ```
 

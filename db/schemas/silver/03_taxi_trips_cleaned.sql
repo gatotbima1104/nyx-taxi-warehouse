@@ -103,6 +103,8 @@ WHERE brt.tpep_pickup_datetime < brt.tpep_dropoff_datetime
     AND brt.trip_distance > 0
     AND brt.passenger_count > 0
     AND brt.fare_amount > 0
-    AND brt.tip_amount >= 0;
+    AND brt.tip_amount >= 0
+    AND brt.tpep_pickup_datetime >= %(start_period)s
+    AND brt.tpep_pickup_datetime < %(end_period)s;
 
 COMMIT;

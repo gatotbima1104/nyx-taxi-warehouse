@@ -12,6 +12,6 @@ POSTGRES_URL = os.getenv("POSTGRES_URL") or ""
 
 TAXI_URL = os.getenv("TAXI_URL") or "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01.parquet"
 TAXI_ZONE_LOOKUP_URL = os.getenv("TAXI_ZONE_LOOKUP_URL") or "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
-TAXI_DATA_FILENAME = os.getenv("TAXI_DATA_FILENAME") or "raw_yellow_tripdata_2026_01.parquet"
+TAXI_DATA_FILENAME = os.getenv("TAXI_DATA_FILENAME") or "raw_yellow_tripdata_2026-01.parquet"
 TAXI_ZONE_LOOKUP_TABLE = os.getenv("TAXI_ZONE_LOOKUP_TABLE") or "taxi_zone_lookup.csv"
 CHUNK_SIZE = 8192

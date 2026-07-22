@@ -9,8 +9,10 @@ from scripts.managers import (
 )
 
 class SilverTransformer:
-    def __init__(self, conn):
+    def __init__(self, conn, start_period, end_period):
         self.conn = conn
+        self.start_period = start_period
+        self.end_period = end_period
         self.schema = SchemaManager(conn)
         self.audit = AuditManager(conn)
         
@@ -18,7 +20,12 @@ class SilverTransformer:
         start = datetime.now()
         
         try:
-            self.schema.execute_many(SILVER_SQL_FILES)
+            self.schema.execute_many(
+                SILVER_SQL_FILES,
+                params={
+                    "start_period": self.start_period,
+                    "end_period": self.end_period
+                })
             self._log_outputs(start)
             
             Helper.log(message="Transform to Silver successfully ... ")

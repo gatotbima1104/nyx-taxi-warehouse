@@ -1,5 +1,7 @@
 import time
 import pandas as pd
+import re
+from dateutil.relativedelta import relativedelta
 from pathlib import Path
 from typing import Callable
 from pandas import DataFrame
@@ -111,3 +113,25 @@ class Helper:
             },
             "execution_time_seconds": round(execution_time, 2)
         }
+    
+    @staticmethod
+    def get_dataset_period(filename: str) -> tuple[datetime, datetime]:
+        """
+            Example: yellow_tripdata_2026-01.parquet
+            Returns:(datetime(2026,1,1), datetime(2026,2,1))
+        """
+        match = re.search(r"(\d{4})-(\d{2})", filename)
+
+        if not match:
+            raise ValueError(
+                f"Cannot determine dataset period from '{filename}'"
+            )
+
+        year = int(match.group(1))
+        month = int(match.group(2))
+
+        start = datetime(year, month, 1)
+        end = start + relativedelta(months=1)
+
+        return start, end
+        

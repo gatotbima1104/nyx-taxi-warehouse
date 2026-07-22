@@ -18,11 +18,12 @@ class SchemaManager():
         self.connection.commit()
         print(f'[SCHEMA] Executed {filepath.name}')
         
-    def execute_many(self, filepath: list[Path]) -> None:
+    def execute_many(self, filepath: list[Path], params=None) -> None:
+        print("params", params)
         with self.connection.cursor() as cur:
             for filepath in filepath:
                 sql = self.read(filepath)
-                cur.execute(sql)
+                cur.execute(sql, params)
                 print(f'[SQL] Executed {filepath.name}')
         
         self.connection.commit()

@@ -57,7 +57,8 @@ def load_to_bronze():
     BronzeLoader(conn).load_to_bronze()
  
 def transform_to_silver():
-    SilverTransformer(conn).transform()
+    start_period, end_period = Helper.get_dataset_period(TAXI_DATA_FILENAME)
+    SilverTransformer(conn, start_period, end_period).transform()
 
 def analytics_to_gold():
     GoldMartBuilder(conn).build()
